@@ -29,7 +29,7 @@ export default async function InvoicePage({ params }: Props) {
   const totalGst = order.gstAmount;
 
   return (
-    <div className="min-h-screen bg-[#f4f3ef] text-black p-4 sm:p-8 flex flex-col justify-start items-center pt-28">
+    <div className="min-h-screen bg-[#f4f3ef] text-black p-4 sm:p-8 flex flex-col justify-start items-center pt-28 print:bg-white print:p-0 print:pt-0 print:block">
       {/* Invoice controls (non-printable) */}
       <div className="max-w-4xl w-full bg-white border border-black/5 rounded-2xl p-4 mb-6 flex flex-wrap justify-between items-center gap-4 print:hidden shadow-xs">
         <div className="flex items-center gap-2">
@@ -51,7 +51,7 @@ export default async function InvoicePage({ params }: Props) {
       <div className="max-w-4xl w-full bg-white border border-black/5 p-8 sm:p-12 rounded-3xl shadow-xs flex flex-col justify-between print:border-none print:p-0 print:shadow-none space-y-8">
         
         {/* Header Block */}
-        <div className="flex flex-col sm:flex-row justify-between items-start gap-6 border-b border-black/5 pb-6">
+        <div className="flex flex-col sm:flex-row justify-between items-start gap-6 border-b border-black/5 pb-6 print:flex-row print:justify-between print:items-start">
           <div className="space-y-2">
             <div className="flex items-center gap-2">
               <svg className="w-8 h-8 text-black" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -86,7 +86,7 @@ export default async function InvoicePage({ params }: Props) {
         </div>
 
         {/* Addresses block */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 border-b border-black/5 pb-6 text-xs leading-relaxed">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 border-b border-black/5 pb-6 text-xs leading-relaxed print:grid-cols-2 print:gap-6">
           <div className="space-y-1">
             <h3 className="font-extrabold text-black/45 uppercase tracking-widest text-[9px]">Billed To (Customer):</h3>
             <p className="font-extrabold text-sm text-black">{order.customerName}</p>
@@ -134,9 +134,9 @@ export default async function InvoicePage({ params }: Props) {
         </div>
 
         {/* Financial calculations and GST breakdown */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 border-t border-black/5 pt-6">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 border-t border-black/5 pt-6 print:grid-cols-12 print:gap-6">
           {/* Tax breakdown details */}
-          <div className="md:col-span-7 bg-[#fcfbf9] p-4 border border-black/5 rounded-2xl text-[10px] space-y-2 text-black/70 leading-relaxed font-bold">
+          <div className="md:col-span-7 bg-[#fcfbf9] p-4 border border-black/5 rounded-2xl text-[10px] space-y-2 text-black/70 leading-relaxed font-bold print:col-span-7 print:bg-transparent print:p-2">
             <h4 className="font-extrabold text-black uppercase tracking-widest text-[9px] mb-1">GST Taxation Summary Breakdown:</h4>
             <div className="flex justify-between border-b border-black/5 pb-1">
               <span className="uppercase tracking-wider text-[8px] text-black/45">Total Taxable Value (Base Price):</span>
@@ -167,7 +167,7 @@ export default async function InvoicePage({ params }: Props) {
           </div>
 
           {/* Checkout Totals */}
-          <div className="md:col-span-5 text-right text-xs space-y-2 text-black/60 font-bold">
+          <div className="md:col-span-5 text-right text-xs space-y-2 text-black/60 font-bold print:col-span-5">
             <div className="flex justify-between">
               <span className="uppercase tracking-wider text-[9px]">Subtotal:</span>
               <span className="font-extrabold text-black">₹{order.orderValue.toLocaleString('en-IN')}</span>
@@ -192,7 +192,7 @@ export default async function InvoicePage({ params }: Props) {
         </div>
 
         {/* Legal disclosures & Stamp Signature */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 border-t border-black/5 pt-8 text-[9px] text-black/45 leading-relaxed uppercase tracking-wider font-bold">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 border-t border-black/5 pt-8 text-[9px] text-black/45 leading-relaxed uppercase tracking-wider font-bold print:grid-cols-2 print:gap-6">
           <div className="space-y-1">
             <p className="font-extrabold text-black/60">Terms of Sale & Disclosures:</p>
             <p>1. Certified goods sold are final for tax declarations.</p>
