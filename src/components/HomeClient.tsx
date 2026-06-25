@@ -103,11 +103,18 @@ export default function HomeClient({ initialProducts }: HomeClientProps) {
         </div>
       </section>
 
-      {/* 2. ABOUT / CONCEPT SECTION (ENA Screenshot 2) */}
-      <section id="brand-story" className="max-w-4xl mx-auto px-4 text-center space-y-12 pt-8">
+      {/* 2. ABOUT / CONCEPT SECTION (ABOUT) */}
+      <motion.section
+        id="brand-story"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        className="max-w-4xl mx-auto px-4 text-center space-y-12 pt-8 overflow-hidden"
+      >
         <div className="relative inline-block">
           {/* Overlay large outline text */}
-          <span className="absolute -top-10 left-1/2 -translate-x-1/2 text-7xl sm:text-9xl outline-text pointer-events-none select-none tracking-widest opacity-25">
+          <span className="absolute -top-10 left-1/2 -translate-x-1/2 text-6xl sm:text-9xl outline-text pointer-events-none select-none tracking-widest opacity-25">
             ABOUT
           </span>
           <h2 className="text-xl sm:text-3xl font-extrabold tracking-[0.15em] text-black uppercase relative z-10">
@@ -128,21 +135,27 @@ export default function HomeClient({ initialProducts }: HomeClientProps) {
             className="w-full rounded-2xl border border-black/5 hover:translate-y-[-8px] transition-transform duration-500 shadow-sm"
           />
         </div>
-      </section>
+      </motion.section>
 
-      {/* 3. BRAND PHILOSOPHY & DETAILS SECTION (ENA Screenshot 3 & 5) */}
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-16 items-center pt-8">
+      {/* 3. BRAND PHILOSOPHY & DETAILS SECTION */}
+      <motion.section
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
+        className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-16 items-center pt-8"
+      >
         <div className="space-y-6">
           <div className="space-y-1">
             <span className="text-xs uppercase tracking-[0.3em] text-black/50 font-semibold block">
-              AXICORE ENGINEERING
+              CURATED PREMIUM ATHLETICS
             </span>
             <h3 className="text-2xl sm:text-4xl font-extrabold tracking-wider text-black uppercase">
-              The Geometry of Recovery
+              Engineered for Motion
             </h3>
           </div>
           <p className="text-sm text-black/70 font-light leading-loose tracking-wide">
-            At the core of our curation lies AXICORE™ engineering, the living expression of Natural Mechanics. Inspired by human anatomy, our selected footwear designs distribute impact and return energy across multiple axes through flexible, tendon-like soles. The result is motion that flows naturally: stable, efficient, and powerful, enabling athletes and active professionals to move in complete comfort.
+            At the core of our curation lies high-performance engineering from the world's leading brands: Nike, Adidas, Puma, Skechers, and Reebok. Every article of footwear, apparel, and training accessory is hand-picked to deliver maximum energy return, ergonomic movement, and long-term durability. Experience motion that flows naturally: stable, efficient, and powerful.
           </p>
           <div className="pt-2">
             <Link
@@ -162,10 +175,16 @@ export default function HomeClient({ initialProducts }: HomeClientProps) {
           />
           <div className="absolute inset-0 bg-black/5" />
         </div>
-      </section>
+      </motion.section>
 
       {/* 4. PROMOTIONAL METRIC BANNER */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <motion.section
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+      >
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 bg-white border border-black/5 p-8 rounded-2xl text-center shadow-xs">
           <div className="space-y-1">
             <span className="text-black block text-2xl sm:text-3xl font-extrabold tracking-wide">100%</span>
@@ -175,19 +194,25 @@ export default function HomeClient({ initialProducts }: HomeClientProps) {
             <span className="text-black block text-2xl sm:text-3xl font-extrabold tracking-wide">₹999</span>
             <span className="text-[9px] uppercase tracking-widest text-black/50 font-semibold">Free Shipping Threshold</span>
           </div>
-          <div className="space-y-1 border-l border-black/5">
+          <div className="space-y-1 border-t md:border-t-0 md:border-l border-black/5 pt-4 md:pt-0">
             <span className="text-black block text-2xl sm:text-3xl font-extrabold tracking-wide">7 Days</span>
             <span className="text-[9px] uppercase tracking-widest text-black/50 font-semibold">Hassle-free Exchange</span>
           </div>
-          <div className="space-y-1 border-l border-black/5">
+          <div className="space-y-1 border-t md:border-t-0 border-l border-black/5 pt-4 md:pt-0">
             <span className="text-black block text-2xl sm:text-3xl font-extrabold tracking-wide">PAN India</span>
             <span className="text-[9px] uppercase tracking-widest text-black/50 font-semibold">Express Delivery</span>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* 5. CATEGORIES SHOWCASE */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      <motion.section
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12"
+      >
         <div className="text-center space-y-2">
           <span className="text-xs uppercase tracking-[0.3em] text-black/50 font-semibold">Collections</span>
           <h2 className="text-2xl sm:text-3xl font-extrabold tracking-wider text-black uppercase">Browse Categories</h2>
@@ -240,10 +265,16 @@ export default function HomeClient({ initialProducts }: HomeClientProps) {
             </Link>
           ))}
         </div>
-      </section>
+      </motion.section>
 
       {/* 6. CURATED FEATURED PRODUCTS GRID */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      <motion.section
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12"
+      >
         <div className="flex flex-col sm:flex-row items-center justify-between gap-6 border-b border-black/5 pb-6">
           <div className="space-y-1 text-center sm:text-left">
             <span className="text-xs uppercase tracking-[0.3em] text-black/50 font-semibold">Curation</span>
@@ -251,7 +282,7 @@ export default function HomeClient({ initialProducts }: HomeClientProps) {
           </div>
 
           {/* Filter Tabs (Capsules) */}
-          <div className="flex gap-1.5 bg-white border border-black/5 p-1 rounded-full shadow-xs">
+          <div className="flex gap-1.5 bg-white border border-black/5 p-1 rounded-full shadow-xs max-w-full overflow-x-auto no-scrollbar">
             {[
               { id: 'new', label: 'New Arrivals' },
               { id: 'best', label: 'Best Sellers' },
@@ -260,7 +291,7 @@ export default function HomeClient({ initialProducts }: HomeClientProps) {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id as any)}
-                className={`px-5 py-2 text-[10px] uppercase tracking-widest font-bold transition-all rounded-full ${
+                className={`px-3 sm:px-5 py-2 text-[9px] sm:text-[10px] uppercase tracking-widest font-bold transition-all rounded-full whitespace-nowrap ${
                   activeTab === tab.id
                     ? 'bg-black text-white'
                     : 'text-black/55 hover:text-black hover:bg-black/5'
@@ -273,9 +304,13 @@ export default function HomeClient({ initialProducts }: HomeClientProps) {
         </div>
 
         {/* Curated Products Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProducts.map((product) => (
-            <div
+            <motion.div
+              layout
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.4 }}
               key={product.id}
               className="group bg-white border border-black/5 rounded-2xl overflow-hidden flex flex-col justify-between hover:shadow-md transition-all duration-300 shadow-xs"
             >
@@ -358,13 +393,19 @@ export default function HomeClient({ initialProducts }: HomeClientProps) {
                   )}
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
-      </section>
+        </motion.div>
+      </motion.section>
 
       {/* 7. PINCODE SERVICEABILITY CONTAINER */}
-      <section className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <motion.section
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8"
+      >
         <div className="bg-white border border-black/5 rounded-2xl p-8 space-y-6 shadow-xs text-center">
           <div className="space-y-2">
             <span className="text-xs uppercase tracking-[0.3em] text-black/50 font-semibold block">Shipping Depot</span>
@@ -433,10 +474,16 @@ export default function HomeClient({ initialProducts }: HomeClientProps) {
             </div>
           )}
         </div>
-      </section>
+      </motion.section>
 
       {/* 8. VERIFIED EXPERIENCES */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      <motion.section
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12"
+      >
         <div className="text-center space-y-2">
           <span className="text-xs uppercase tracking-[0.3em] text-black/50 font-semibold">Reviews</span>
           <h2 className="text-2xl sm:text-3xl font-extrabold tracking-wider text-black uppercase">Verified Athlete Experiences</h2>
@@ -448,15 +495,15 @@ export default function HomeClient({ initialProducts }: HomeClientProps) {
               name: 'Dr. Vivek Sengupta',
               city: 'Jamshedpur',
               rating: 5,
-              title: 'Best sliders for recovery',
-              quote: 'As a surgeon, I stand for hours. The CloudSlide comfort sandals are a game changer. The EVA foam feels exactly like running clouds, and the arch support is perfect. Incredible service!'
+              title: 'Best slides for recovery',
+              quote: 'As a surgeon, I stand for hours. The Adidas Adilette Comfort Slides are a game changer. The EVA foam feels exactly like walking on clouds, and the arch support is perfect. Incredible service!'
             },
             {
               name: 'Anjali Sharma',
               city: 'Ranchi',
               rating: 5,
               title: 'Remarkable running support',
-              quote: 'My ENA AXICORE Apex running shoes arrived in just 2 days. The energy bounce-back is unlike any standard sports brand. Understated design, pure premium material. Recommend 100%.'
+              quote: 'My Nike Air Zoom Pegasus running shoes arrived in just 2 days. The energy bounce-back is unlike any standard sports brand. Understated design, pure premium material. Recommend 100%.'
             },
             {
               name: 'Kabir Verma',
@@ -485,10 +532,16 @@ export default function HomeClient({ initialProducts }: HomeClientProps) {
             </div>
           ))}
         </div>
-      </section>
+      </motion.section>
 
       {/* 9. NEWSLETTER SUBSCRIBE */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <motion.section
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+      >
         <div className="relative rounded-2xl overflow-hidden py-16 px-6 sm:px-12 lg:px-24 bg-white border border-black/5 text-center space-y-6 shadow-xs">
           <span className="text-xs uppercase tracking-[0.3em] text-black/50 font-semibold block">Join the Club</span>
           <h2 className="text-2xl sm:text-3xl font-extrabold tracking-wider text-black uppercase max-w-xl mx-auto leading-tight">
@@ -524,7 +577,7 @@ export default function HomeClient({ initialProducts }: HomeClientProps) {
             </form>
           )}
         </div>
-      </section>
+      </motion.section>
 
       {/* 10. FOOTER */}
       <footer className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-t border-black/5 pt-12 text-center text-xs text-black/45 space-y-6">

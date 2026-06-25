@@ -2,17 +2,17 @@
   "products": [
     {
       "id": "prod_1",
-      "sku": "ENA-AXI-01-BK",
-      "brand": "ENA Athletics",
+      "sku": "NK-AZM-01",
+      "brand": "Nike",
       "category": "Footwear",
-      "name": "AXICORE Apex Running Shoe",
-      "description": "Designed with the patent-pending AXICORE energy-management system. Inspired by human tendons and the organic curvature of ancient Greek sculpture, this shoe provides maximum energy response, stability, and sleek comfort for your daily run.",
-      "mrp": 14999,
-      "sellingPrice": 12999,
-      "discountPercentage": 13,
+      "name": "Air Zoom Pegasus Running Shoe",
+      "description": "Featuring a responsive zoom air unit and a highly breathable engineering mesh upper. Engineered to support your active stride with premium lightweight cushioning.",
+      "mrp": 12999,
+      "sellingPrice": 9999,
+      "discountPercentage": 23,
       "stockQuantity": 45,
-      "color": "Obsidian Black",
-      "material": "Tech-Mesh & Axis TPU",
+      "color": "Crimson Red",
+      "material": "Tech Mesh & EVA Foam",
       "width": "Standard",
       "sizes": [
         7,
@@ -22,8 +22,7 @@
         11
       ],
       "images": [
-        "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80",
-        "https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=600&q=80"
+        "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=600&q=80"
       ],
       "isNewArrival": true,
       "isBestSeller": true,
@@ -33,16 +32,16 @@
     },
     {
       "id": "prod_2",
-      "sku": "INF-SLI-02-GR",
-      "brand": "Infinity Elite",
+      "sku": "AD-SLD-02",
+      "brand": "Adidas",
       "category": "Slippers",
-      "name": "CloudSlide Comfort Sandals",
-      "description": "Ultra-soft EVA slider designed for active recovery. Made with eco-friendly cushion technology that contours to your foot bed, delivering premium arch support and effortless relaxation.",
-      "mrp": 2499,
-      "sellingPrice": 1799,
-      "discountPercentage": 28,
+      "name": "Adilette Comfort Slides",
+      "description": "Classic lightweight sliders featuring a contoured footbed and quick-drying bandage upper. Perfect recovery footwear after an intense workout session.",
+      "mrp": 2999,
+      "sellingPrice": 1999,
+      "discountPercentage": 33,
       "stockQuantity": 120,
-      "color": "Sage Green",
+      "color": "Core Black",
       "material": "Recycled EVA Foam",
       "width": "Standard",
       "sizes": [
@@ -54,8 +53,7 @@
         11
       ],
       "images": [
-        "https://images.unsplash.com/photo-1603808033192-082d6919d3e1?auto=format&fit=crop&w=600&q=80",
-        "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=600&q=80"
+        "https://images.unsplash.com/photo-1603808033192-082d6919d3e1?auto=format&fit=crop&w=600&q=80"
       ],
       "isNewArrival": true,
       "isBestSeller": false,
@@ -65,47 +63,46 @@
     },
     {
       "id": "prod_3",
-      "sku": "ENA-AXI-03-WH",
-      "brand": "ENA Athletics",
-      "category": "Footwear",
-      "name": "AXICORE Nimbus Training Shoe",
-      "description": "Understated luxury meets high-performance engineering. Featuring a responsive neutral foam bed and architectural heel stabilization, this shoe offers natural-mechanic alignment for long-distance training.",
-      "mrp": 13999,
-      "sellingPrice": 11899,
-      "discountPercentage": 15,
-      "stockQuantity": 3,
-      "color": "Chalk White",
-      "material": "Eco-Knit & High-Response TPU",
+      "sku": "PM-TR-03",
+      "brand": "Puma",
+      "category": "Apparel",
+      "name": "Active Tech Fleece Trousers",
+      "description": "Designed with warm tech fleece material and tapered cuffs. These training trousers offer excellent warmth and mobility without adding extra bulk.",
+      "mrp": 3999,
+      "sellingPrice": 2799,
+      "discountPercentage": 30,
+      "stockQuantity": 50,
+      "color": "Charcoal Grey",
+      "material": "Fleece Knit Polyester",
       "width": "Standard",
       "sizes": [
-        7,
-        8,
-        9,
-        10
+        30,
+        32,
+        34,
+        36
       ],
       "images": [
-        "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&w=600&q=80",
-        "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?auto=format&fit=crop&w=600&q=80"
+        "https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=600&q=80"
       ],
       "isNewArrival": false,
       "isBestSeller": true,
       "isTrending": false,
-      "averageRating": 4.9,
+      "averageRating": 4.7,
       "reviewsCount": 22
     },
     {
       "id": "prod_4",
-      "sku": "INF-APP-04-BK",
-      "brand": "Infinity Elite",
+      "sku": "SK-TEE-04",
+      "brand": "Skechers",
       "category": "Apparel",
-      "name": "Axial Compression Training Tee",
-      "description": "Ergonomic athletic t-shirt made of high-stretch, moisture-wicking synthetic fabric. Styled with minimalist brand detail and athletic fit to complement active movement.",
-      "mrp": 1999,
-      "sellingPrice": 1499,
-      "discountPercentage": 25,
+      "name": "GO RUN Breathable Training Tee",
+      "description": "A breathable, lightweight t-shirt built for running. Features high stretch and sweat-wicking properties to keep you cool and dry.",
+      "mrp": 2499,
+      "sellingPrice": 1699,
+      "discountPercentage: 32": 25,
       "stockQuantity": 65,
-      "color": "Slate Charcoal",
-      "material": "Poly-Spandex Tech Fabric",
+      "color": "Slate Blue",
+      "material": "Poly-Spandex Tech Mesh",
       "width": "Standard",
       "sizes": [
         38,
@@ -124,29 +121,142 @@
     },
     {
       "id": "prod_5",
-      "sku": "INF-ACC-05-BK",
-      "brand": "Infinity Elite",
+      "sku": "RB-SOX-05",
+      "brand": "Reebok",
       "category": "Accessories",
-      "name": "Sleek Thermal Gym Bottle",
-      "description": "Double-walled vacuum insulated stainless steel water bottle. Keeps liquids ice cold for 24 hours or hot for 12 hours. Sleek minimalist powder-coated finish with leak-proof cap.",
-      "mrp": 1499,
-      "sellingPrice": 999,
-      "discountPercentage": 33,
-      "stockQuantity": 79,
-      "color": "Matte Black",
-      "material": "18/8 Stainless Steel",
+      "name": "Cushioned Crew Athletic Socks",
+      "description": "Pack of 3 premium combed cotton athletic socks. Full foot cushioning provides impact absorption and blister protection.",
+      "mrp": 999,
+      "sellingPrice": 599,
+      "discountPercentage": 40,
+      "stockQuantity": 80,
+      "color": "White / Grey",
+      "material": "Premium Combed Cotton",
       "width": "Standard",
       "sizes": [
         0
       ],
       "images": [
-        "https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=600&q=80"
+        "https://images.unsplash.com/photo-1582966772680-860e372bb558?auto=format&fit=crop&w=600&q=80"
       ],
       "isNewArrival": false,
       "isBestSeller": true,
       "isTrending": true,
       "averageRating": 4.7,
       "reviewsCount": 45
+    },
+    {
+      "id": "prod_6",
+      "sku": "NK-SHR-06",
+      "brand": "Nike",
+      "category": "Apparel",
+      "name": "Dri-FIT Flex Training Shorts",
+      "description": "High-performance training shorts featuring Nike Dri-FIT technology. Provides absolute flexibility, sweat management, and a comfortable secure fit.",
+      "mrp": 2199,
+      "sellingPrice": 1499,
+      "discountPercentage": 31,
+      "stockQuantity": 90,
+      "color": "Black / Metallic",
+      "material": "Recycled Polyester",
+      "width": "Standard",
+      "sizes": [
+        30,
+        32,
+        34,
+        36
+      ],
+      "images": [
+        "https://images.unsplash.com/photo-1591195853828-11db59a44f6b?auto=format&fit=crop&w=600&q=80"
+      ],
+      "isNewArrival": true,
+      "isBestSeller": true,
+      "isTrending": false,
+      "averageRating": 4.8,
+      "reviewsCount": 19
+    },
+    {
+      "id": "prod_7",
+      "sku": "AD-KIT-07",
+      "brand": "Adidas",
+      "category": "Apparel",
+      "name": "Primeknit Running Kit",
+      "description": "Complete high-performance training bundle comprising premium running compression pants and a cooling active sando vest.",
+      "mrp": 5999,
+      "sellingPrice": 4499,
+      "discountPercentage": 25,
+      "stockQuantity": 30,
+      "color": "Black Accent",
+      "material": "Primeknit Seamless fabric",
+      "width": "Standard",
+      "sizes": [
+        38,
+        40,
+        42,
+        44
+      ],
+      "images": [
+        "https://images.unsplash.com/photo-1571008887538-b36bb32f4571?auto=format&fit=crop&w=600&q=80"
+      ],
+      "isNewArrival": true,
+      "isBestSeller": false,
+      "isTrending": true,
+      "averageRating": 4.7,
+      "reviewsCount": 12
+    },
+    {
+      "id": "prod_8",
+      "sku": "PM-JER-08",
+      "brand": "Puma",
+      "category": "Apparel",
+      "name": "Striker Football Active Jersey",
+      "description": "DryCELL sweat-wicking lightweight football jersey. Styled with club details, high ventilation zones, and ergonomic lines.",
+      "mrp": 2799,
+      "sellingPrice": 1899,
+      "discountPercentage": 32,
+      "stockQuantity": 40,
+      "color": "Red / White",
+      "material": "DryCELL Polyester Knit",
+      "width": "Standard",
+      "sizes": [
+        38,
+        40,
+        42,
+        44
+      ],
+      "images": [
+        "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=600&q=80"
+      ],
+      "isNewArrival": false,
+      "isBestSeller": true,
+      "isTrending": true,
+      "averageRating": 4.6,
+      "reviewsCount": 28
+    },
+    {
+      "id": "prod_9",
+      "sku": "RB-CLN-09",
+      "brand": "Reebok",
+      "category": "Accessories",
+      "name": "Ultimate Shoe Cleaner Kit",
+      "description": "All-in-one athletic shoe care cleaner. Comes with a foaming cleaning solution, a premium soft hog bristle brush, and a microfiber cloth.",
+      "mrp": 1499,
+      "sellingPrice": 999,
+      "discountPercentage": 33,
+      "stockQuantity": 15,
+      "color": "Clear / White",
+      "material": "Natural Cleaning Solution",
+      "width": "Standard",
+      "sizes": [
+        0
+      ],
+      "images": [
+        "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&w=600&q=80"
+      ],
+      "isNewArrival": true,
+      "isBestSeller": false,
+      "isTrending": false,
+      "averageRating": 4.4,
+      "reviewsCount": 30
     }
   ],
   "coupons": [
@@ -227,7 +337,9 @@
         }
       ],
       "wishlist": [],
-      "recentlyViewed": [],
+      "recentlyViewed": [
+        "prod_8"
+      ],
       "createdAt": "2026-06-24T20:42:46.760Z"
     },
     {
@@ -357,6 +469,22 @@
       "action": "ORDER_CREATE_GUEST",
       "details": "Guest created order: ORD_1782426465281 for amount ₹999",
       "timestamp": "2026-06-25T22:27:45.297Z"
+    },
+    {
+      "id": "log_1782426870910",
+      "userId": "u_1",
+      "userEmail": "admin@infinitytraders.com",
+      "action": "USER_LOGIN",
+      "details": "Logged in successfully. OTP: false",
+      "timestamp": "2026-06-25T22:34:30.910Z"
+    },
+    {
+      "id": "log_1782427048344",
+      "userId": "u_1",
+      "userEmail": "admin@infinitytraders.com",
+      "action": "USER_LOGIN",
+      "details": "Logged in successfully. OTP: false",
+      "timestamp": "2026-06-25T22:37:28.344Z"
     }
   ],
   "settings": {

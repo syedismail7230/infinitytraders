@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Clock, Send, CheckCircle2, AlertTriangle, Sparkles } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function ContactPage() {
   // Form State
@@ -38,7 +39,12 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 bg-[#f4f3ef] min-h-[80vh] flex flex-col justify-center">
+    <motion.div
+      initial={{ opacity: 0, y: 15 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+      className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 bg-[#f4f3ef] min-h-[80vh] flex flex-col justify-center"
+    >
       {/* Page Header */}
       <div className="text-center space-y-2 border-b border-black/5 pb-8 mb-12">
         <span className="text-[10px] uppercase tracking-[0.3em] text-black/55 font-bold">Get In Touch</span>
@@ -226,6 +232,6 @@ export default function ContactPage() {
           )}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

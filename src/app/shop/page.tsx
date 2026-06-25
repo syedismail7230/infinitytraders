@@ -7,6 +7,7 @@ import { getProductsAction } from '@/app/actions';
 import { useCart } from '@/context/CartContext';
 import { Star, Search, SlidersHorizontal, Grid, X, ShoppingCart } from 'lucide-react';
 import Link from 'next/link';
+import { motion, AnimatePresence } from 'framer-motion';
 
 function ShopContent() {
   const { addToCart } = useCart();
@@ -273,9 +274,13 @@ function ShopContent() {
               </button>
             </div>
           ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {filteredProducts.map((product) => (
-                <div
+                <motion.div
+                  layout
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.4 }}
                   key={product.id}
                   className="group bg-white border border-black/5 rounded-2xl overflow-hidden flex flex-col justify-between hover:shadow-md transition-all duration-300 shadow-xs"
                 >
@@ -354,146 +359,157 @@ function ShopContent() {
                       )}
                     </div>
                   </div>
-                </div>
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
           )}
         </main>
       </div>
 
       {/* MOBILE FILTERS SIDE PANEL */}
-      {showFiltersMobile && (
-        <div className="fixed inset-0 z-50 lg:hidden flex justify-end">
-          <div
-            onClick={() => setShowFiltersMobile(false)}
-            className="absolute inset-0 bg-black/40 backdrop-blur-xs"
-          />
+      <AnimatePresence>
+        {showFiltersMobile && (
+          <div className="fixed inset-0 z-50 lg:hidden flex justify-end">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setShowFiltersMobile(false)}
+              className="absolute inset-0 bg-black/40 backdrop-blur-xs"
+            />
 
-          <div className="relative w-80 max-w-[85vw] h-full bg-[#f4f3ef] border-l border-black/5 p-6 flex flex-col justify-between overflow-y-auto z-10 space-y-6 shadow-2xl">
-            <div className="space-y-6">
-              <div className="flex justify-between items-center border-b border-black/5 pb-4">
-                <h2 className="text-[10px] uppercase tracking-widest font-extrabold text-black flex items-center gap-2">
-                  <SlidersHorizontal className="w-4 h-4 text-black" /> Filters
-                </h2>
+            <motion.div
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+              className="relative w-80 max-w-[85vw] h-full bg-[#f4f3ef] border-l border-black/5 p-6 flex flex-col justify-between overflow-y-auto z-10 space-y-6 shadow-2xl"
+            >
+              <div className="space-y-6">
+                <div className="flex justify-between items-center border-b border-black/5 pb-4">
+                  <h2 className="text-[10px] uppercase tracking-widest font-extrabold text-black flex items-center gap-2">
+                    <SlidersHorizontal className="w-4 h-4 text-black" /> Filters
+                  </h2>
+                  <button
+                    onClick={() => setShowFiltersMobile(false)}
+                    className="text-black/50 hover:text-black transition-colors"
+                  >
+                    <X className="w-5 h-5" />
+                  </button>
+                </div>
+
+                {/* Mobile Category */}
+                <div className="space-y-2">
+                  <h3 className="text-[10px] uppercase tracking-wider font-extrabold text-black/45">Category</h3>
+                  <div className="flex flex-wrap gap-1.5">
+                    {categories.map((cat) => (
+                      <button
+                        key={cat}
+                        onClick={() => setSelectedCategory(cat)}
+                        className={`text-[10px] px-3.5 py-1.5 border rounded-full uppercase tracking-wider transition-colors font-bold ${
+                          selectedCategory === cat
+                            ? 'border-black bg-black text-white'
+                            : 'border-black/10 bg-white text-black hover:border-black/25'
+                        }`}
+                      >
+                        {cat}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Mobile Brand */}
+                <div className="space-y-2 border-t border-black/5 pt-4">
+                  <h3 className="text-[10px] uppercase tracking-wider font-extrabold text-black/45">Brand</h3>
+                  <div className="flex flex-wrap gap-1.5">
+                    {brands.map((b) => (
+                      <button
+                        key={b}
+                        onClick={() => setSelectedBrand(b)}
+                        className={`text-[10px] px-3.5 py-1.5 border rounded-full uppercase tracking-wider transition-colors font-bold ${
+                          selectedBrand === b
+                            ? 'border-black bg-black text-white'
+                            : 'border-black/10 bg-white text-black hover:border-black/25'
+                        }`}
+                      >
+                        {b}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Mobile Size */}
+                <div className="space-y-3 border-t border-black/5 pt-4">
+                  <h3 className="text-[10px] uppercase tracking-wider font-extrabold text-black/45">Shoe size (UK)</h3>
+                  <div className="grid grid-cols-4 gap-1.5">
+                    {allSizes.map((size) => (
+                      <button
+                        key={size.toString()}
+                        onClick={() => setSelectedSize(size as any)}
+                        className={`py-2.5 text-center text-[10px] border rounded-xl font-bold transition-all ${
+                          selectedSize === size
+                            ? 'border-black bg-black text-white'
+                            : 'border-black/10 bg-white text-black hover:border-black/25'
+                        }`}
+                      >
+                        {size === 'All' ? 'ALL' : size}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Mobile Price */}
+                <div className="space-y-3 border-t border-black/5 pt-4">
+                  <div className="flex justify-between items-center text-[10px] uppercase tracking-wider font-extrabold text-black/45">
+                    <span>Max Price</span>
+                    <span className="text-black font-extrabold">₹{maxPrice.toLocaleString('en-IN')}</span>
+                  </div>
+                  <input
+                    type="range"
+                    min={500}
+                    max={15000}
+                    step={100}
+                    value={maxPrice}
+                    onChange={(e) => setMaxPrice(Number(e.target.value))}
+                    className="w-full accent-black bg-black/10 rounded h-1 cursor-pointer"
+                  />
+                </div>
+
+                {/* Mobile Sorting */}
+                <div className="space-y-3 border-t border-black/5 pt-4">
+                  <h3 className="text-[10px] uppercase tracking-wider font-extrabold text-black/45">Sort By</h3>
+                  <select
+                    value={sortBy}
+                    onChange={(e) => setSortBy(e.target.value)}
+                    className="w-full bg-[#fdfdfd] border border-black/10 rounded-xl p-2.5 text-xs text-black font-semibold focus:border-black focus:outline-none"
+                  >
+                    <option value="newest">New Arrivals</option>
+                    <option value="best-selling">Best Sellers</option>
+                    <option value="popularity">Popularity</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                  </select>
+                </div>
+              </div>
+
+              <div className="flex gap-2 border-t border-black/5 pt-4">
+                <button
+                  onClick={clearFilters}
+                  className="flex-1 bg-white hover:bg-black/5 border border-black/15 text-black py-3 text-[10px] font-extrabold uppercase tracking-widest rounded-full transition-all text-center"
+                >
+                  Clear
+                </button>
                 <button
                   onClick={() => setShowFiltersMobile(false)}
-                  className="text-black/50 hover:text-black transition-colors"
+                  className="flex-1 bg-black hover:bg-transparent text-white hover:text-black border border-black py-3 text-[10px] font-extrabold uppercase tracking-widest rounded-full transition-all text-center"
                 >
-                  <X className="w-5 h-5" />
+                  Apply
                 </button>
               </div>
-
-              {/* Mobile Category */}
-              <div className="space-y-2">
-                <h3 className="text-[10px] uppercase tracking-wider font-extrabold text-black/45">Category</h3>
-                <div className="flex flex-wrap gap-1.5">
-                  {categories.map((cat) => (
-                    <button
-                      key={cat}
-                      onClick={() => setSelectedCategory(cat)}
-                      className={`text-[10px] px-3.5 py-1.5 border rounded-full uppercase tracking-wider transition-colors font-bold ${
-                        selectedCategory === cat
-                          ? 'border-black bg-black text-white'
-                          : 'border-black/10 bg-white text-black hover:border-black/25'
-                      }`}
-                    >
-                      {cat}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              {/* Mobile Brand */}
-              <div className="space-y-2 border-t border-black/5 pt-4">
-                <h3 className="text-[10px] uppercase tracking-wider font-extrabold text-black/45">Brand</h3>
-                <div className="flex flex-wrap gap-1.5">
-                  {brands.map((b) => (
-                    <button
-                      key={b}
-                      onClick={() => setSelectedBrand(b)}
-                      className={`text-[10px] px-3.5 py-1.5 border rounded-full uppercase tracking-wider transition-colors font-bold ${
-                        selectedBrand === b
-                          ? 'border-black bg-black text-white'
-                          : 'border-black/10 bg-white text-black hover:border-black/25'
-                      }`}
-                    >
-                      {b}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              {/* Mobile Size */}
-              <div className="space-y-3 border-t border-black/5 pt-4">
-                <h3 className="text-[10px] uppercase tracking-wider font-extrabold text-black/45">Shoe size (UK)</h3>
-                <div className="grid grid-cols-4 gap-1.5">
-                  {allSizes.map((size) => (
-                    <button
-                      key={size.toString()}
-                      onClick={() => setSelectedSize(size as any)}
-                      className={`py-2.5 text-center text-[10px] border rounded-xl font-bold transition-all ${
-                        selectedSize === size
-                          ? 'border-black bg-black text-white'
-                          : 'border-black/10 bg-white text-black hover:border-black/25'
-                      }`}
-                    >
-                      {size === 'All' ? 'ALL' : size}
-                    </button>
-                  ))}
-                </div>
-              </div>
-
-              {/* Mobile Price */}
-              <div className="space-y-3 border-t border-black/5 pt-4">
-                <div className="flex justify-between items-center text-[10px] uppercase tracking-wider font-extrabold text-black/45">
-                  <span>Max Price</span>
-                  <span className="text-black font-extrabold">₹{maxPrice.toLocaleString('en-IN')}</span>
-                </div>
-                <input
-                  type="range"
-                  min={500}
-                  max={15000}
-                  step={100}
-                  value={maxPrice}
-                  onChange={(e) => setMaxPrice(Number(e.target.value))}
-                  className="w-full accent-black bg-black/10 rounded h-1 cursor-pointer"
-                />
-              </div>
-
-              {/* Mobile Sorting */}
-              <div className="space-y-3 border-t border-black/5 pt-4">
-                <h3 className="text-[10px] uppercase tracking-wider font-extrabold text-black/45">Sort By</h3>
-                <select
-                  value={sortBy}
-                  onChange={(e) => setSortBy(e.target.value)}
-                  className="w-full bg-[#fdfdfd] border border-black/10 rounded-xl p-2.5 text-xs text-black font-semibold focus:border-black focus:outline-none"
-                >
-                  <option value="newest">New Arrivals</option>
-                  <option value="best-selling">Best Sellers</option>
-                  <option value="popularity">Popularity</option>
-                  <option value="price-low">Price: Low to High</option>
-                  <option value="price-high">Price: High to Low</option>
-                </select>
-              </div>
-            </div>
-
-            <div className="flex gap-2 border-t border-black/5 pt-4">
-              <button
-                onClick={clearFilters}
-                className="flex-1 bg-white hover:bg-black/5 border border-black/15 text-black py-3 text-[10px] font-extrabold uppercase tracking-widest rounded-full transition-all text-center"
-              >
-                Clear
-              </button>
-              <button
-                onClick={() => setShowFiltersMobile(false)}
-                className="flex-1 bg-black hover:bg-transparent text-white hover:text-black border border-black py-3 text-[10px] font-extrabold uppercase tracking-widest rounded-full transition-all text-center"
-              >
-                Apply
-              </button>
-            </div>
+            </motion.div>
           </div>
-        </div>
-      )}
+        )}
+      </AnimatePresence>
     </div>
   );
 }

@@ -164,28 +164,30 @@ export default function Header() {
                       {user.name.split(' ')[0]}
                     </span>
                   </Link>
-                  <div className="absolute right-0 top-full mt-2 w-48 bg-white border border-black/5 rounded-md py-2 shadow-xl opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-200 z-50 backdrop-blur-md">
-                    <Link
-                      href="/account"
-                      className="block px-4 py-2 text-[10px] text-black/70 hover:bg-black/5 hover:text-black tracking-widest uppercase font-semibold"
-                    >
-                      Dashboard
-                    </Link>
-                    {user.role !== 'CUSTOMER' && (
+                  <div className="absolute right-0 top-full pt-2 w-48 opacity-0 translate-y-2 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-200 z-50">
+                    <div className="bg-white border border-black/5 rounded-md py-2 shadow-xl backdrop-blur-md">
                       <Link
-                        href="/admin"
+                        href="/account"
                         className="block px-4 py-2 text-[10px] text-black/70 hover:bg-black/5 hover:text-black tracking-widest uppercase font-semibold"
                       >
-                        Admin Control
+                        Dashboard
                       </Link>
-                    )}
-                    <hr className="border-black/5 my-1" />
-                    <button
-                      onClick={handleLogout}
-                      className="w-full text-left block px-4 py-2 text-[10px] text-red-600 hover:bg-black/5 tracking-widest uppercase font-semibold"
-                    >
-                      Logout
-                    </button>
+                      {user.role !== 'CUSTOMER' && (
+                        <Link
+                          href="/admin"
+                          className="block px-4 py-2 text-[10px] text-black/70 hover:bg-black/5 hover:text-black tracking-widest uppercase font-semibold"
+                        >
+                          Admin Control
+                        </Link>
+                      )}
+                      <hr className="border-black/5 my-1" />
+                      <button
+                        onClick={handleLogout}
+                        className="w-full text-left block px-4 py-2 text-[10px] text-red-600 hover:bg-black/5 tracking-widest uppercase font-semibold"
+                      >
+                        Logout
+                      </button>
+                    </div>
                   </div>
                 </div>
               ) : (
