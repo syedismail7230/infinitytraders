@@ -9,7 +9,8 @@ type Translations = Record<string, string>;
 const dictionary: Record<Language, Translations> = {
   en: {
     // Nav / Global
-    'nav.shop': 'Shop Catalog',
+    'nav.shop': 'Shop',
+    'nav.contact': 'Contact',
     'nav.account': 'My Account',
     'nav.admin': 'Staff Admin',
     'nav.cart': 'Shopping Bag',
@@ -94,7 +95,8 @@ const dictionary: Record<Language, Translations> = {
   },
   hi: {
     // Nav / Global
-    'nav.shop': 'शॉप कैटलॉग',
+    'nav.shop': 'शॉप',
+    'nav.contact': 'संपर्क',
     'nav.account': 'मेरा खाता',
     'nav.admin': 'कर्मचारी एडमिन',
     'nav.cart': 'शॉपिंग बैग',

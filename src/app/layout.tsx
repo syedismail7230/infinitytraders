@@ -24,13 +24,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-full scroll-smooth">
+    <html lang="en" className="h-full scroll-smooth bg-[#f4f3ef]">
       <body className="min-h-full flex flex-col bg-[#f4f3ef] text-black antialiased">
         <LanguageProvider>
           <CartProvider>
             <Header />
             <CartDrawer />
-            <main className="flex-1 flex flex-col pt-24">
+            <main className="flex-1 flex flex-col pt-24 bg-[#f4f3ef]">
               {children}
             </main>
           </CartProvider>

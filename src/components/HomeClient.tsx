@@ -341,6 +341,7 @@ export default function HomeClient({ initialProducts }: HomeClientProps) {
 
                   {product.stockQuantity > 0 ? (
                     <button
+                      suppressHydrationWarning
                       onClick={() => addToCart(product, 1, product.sizes[0] || 8)}
                       className="w-full bg-black hover:bg-transparent text-white hover:text-black border border-black py-2.5 text-[10px] uppercase tracking-widest font-bold flex items-center justify-center gap-1.5 rounded-full transition-all"
                     >
@@ -348,6 +349,7 @@ export default function HomeClient({ initialProducts }: HomeClientProps) {
                     </button>
                   ) : (
                     <button
+                      suppressHydrationWarning
                       disabled
                       className="w-full bg-black/5 border border-black/5 text-black/30 py-2.5 text-[10px] uppercase tracking-widest font-bold rounded-full cursor-not-allowed"
                     >
@@ -376,6 +378,7 @@ export default function HomeClient({ initialProducts }: HomeClientProps) {
 
           <form onSubmit={handlePincodeCheck} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
             <input
+              suppressHydrationWarning
               type="text"
               maxLength={6}
               placeholder="Enter your 6-digit Indian Pincode"
@@ -384,6 +387,7 @@ export default function HomeClient({ initialProducts }: HomeClientProps) {
               className="flex-1 border border-black/10 hover:border-black/25 focus:border-black rounded-full px-5 py-3 text-center tracking-widest text-xs outline-none bg-[#fdfdfd] transition-all"
             />
             <button
+              suppressHydrationWarning
               type="submit"
               disabled={checkingPin || pincode.length !== 6}
               className="bg-black hover:bg-transparent text-white hover:text-black border border-black py-3 px-6 text-xs uppercase tracking-widest font-bold disabled:opacity-50 disabled:pointer-events-none rounded-full transition-all"
@@ -502,6 +506,7 @@ export default function HomeClient({ initialProducts }: HomeClientProps) {
           ) : (
             <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
               <input
+                suppressHydrationWarning
                 type="email"
                 required
                 placeholder="Enter your email address"
@@ -510,6 +515,7 @@ export default function HomeClient({ initialProducts }: HomeClientProps) {
                 className="flex-1 border border-black/10 hover:border-black/25 focus:border-black rounded-full px-5 py-3 text-xs outline-none bg-[#fdfdfd] transition-all"
               />
               <button
+                suppressHydrationWarning
                 type="submit"
                 className="bg-black hover:bg-transparent text-white hover:text-black border border-black py-3 px-6 text-[10px] uppercase tracking-widest font-bold rounded-full transition-all flex items-center justify-center gap-1.5"
               >

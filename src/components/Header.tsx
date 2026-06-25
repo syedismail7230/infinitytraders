@@ -43,8 +43,7 @@ export default function Header() {
   const navLinks = [
     { label: t('nav.home'), href: '/' },
     { label: t('nav.shop'), href: '/shop' },
-    { label: t('home.newArrivals'), href: '/shop?filter=new' },
-    { label: t('home.trending'), href: '/shop?filter=best' }
+    { label: t('nav.contact'), href: '/contact' }
   ];
 
   return (
