@@ -50,7 +50,7 @@ export default function HomeClient({ initialProducts }: HomeClientProps) {
           <img
             src="/hero_runner.png"
             alt="Athletic runner hero"
-            className="w-full h-full object-cover object-center filter brightness-95 contrast-105"
+            className="w-full h-full object-cover object-top filter brightness-95 contrast-105"
           />
         </div>
 
